@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 2.8)
+project(test_opengl)
+
+set(CMAKE_VERBOSE_MAKEFILE OFF)
+
+include_directories(/usr/local/include)
+include_directories(glad/include)
+
+set(CMAKE_CXX_FLAGS "-g -std=c++11 -Wformat")
+
+# glfw的库目录路径
+link_directories(/usr/local/Cellar/glfw/3.3.4/lib)
+add_executable(main main.cpp glad/src/glad.c)
+add_executable(triangle triangle.cpp glad/src/glad.c)
+
+# 指定glfw库
+target_link_libraries(main GLFW)
+target_link_libraries(triangle GLFW)
