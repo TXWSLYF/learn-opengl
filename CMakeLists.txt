@@ -17,6 +17,7 @@ add_executable(03 03.cpp glad/src/glad.c)
 add_executable(04 04.cpp glad/src/glad.c)
 add_executable(05 05.cpp glad/src/glad.c)
 add_executable(06 06.cpp glad/src/glad.c)
+add_executable(07 07.cpp glad/src/glad.c)
 
 # 指定glfw库
 target_link_libraries(01 GLFW)
@@ -25,3 +26,4 @@ target_link_libraries(03 GLFW)
 target_link_libraries(04 GLFW)
 target_link_libraries(05 GLFW)
 target_link_libraries(06 GLFW)
+target_link_libraries(07 GLFW)
