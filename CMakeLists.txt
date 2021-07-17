@@ -6,6 +6,8 @@ set(CMAKE_VERBOSE_MAKEFILE OFF)
 include_directories(/usr/local/include)
 include_directories(glad/include)
 include_directories(src/Shaders)
+include_directories(src/)
+include_directories(includes/)
 
 set(CMAKE_CXX_FLAGS "-g -std=c++11 -Wformat")
 
@@ -19,6 +21,7 @@ add_executable(05 05.cpp glad/src/glad.c)
 add_executable(06 06.cpp glad/src/glad.c)
 add_executable(07 07.cpp glad/src/glad.c)
 add_executable(08 08.cpp glad/src/glad.c)
+add_executable(09 09.cpp glad/src/glad.c)
 
 # 指定glfw库
 target_link_libraries(01 GLFW)
@@ -29,3 +32,4 @@ target_link_libraries(05 GLFW)
 target_link_libraries(06 GLFW)
 target_link_libraries(07 GLFW)
 target_link_libraries(08 GLFW)
+target_link_libraries(09 GLFW)
