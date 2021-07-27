@@ -50,7 +50,7 @@ int main()
 
     // build and compile our shader zprogram
     // ------------------------------------
-    Shader ourShader("/Users/alex/code/play-place/learn-opengl/Shaders/12/shader.vs", "/Users/alex/code/play-place/learn-opengl/Shaders/12/shader.fs");
+    Shader ourShader("../Shaders/12/shader.vs", "../Shaders/12/shader.fs");
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
@@ -105,7 +105,7 @@ int main()
     int width, height, nrChannels;
     stbi_set_flip_vertically_on_load(true); // tell stb_image.h to flip loaded texture's on the y-axis.
     // The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
-    unsigned char *data = stbi_load("/Users/alex/code/play-place/learn-opengl/Shaders/12/container.jpg", &width, &height, &nrChannels, 0);
+    unsigned char *data = stbi_load("../Shaders/12/container.jpg", &width, &height, &nrChannels, 0);
     if (data)
     {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
@@ -127,7 +127,7 @@ int main()
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
     // load image, create texture and generate mipmaps
-    data = stbi_load("/Users/alex/code/play-place/learn-opengl/Shaders/12/awesomeface.png", &width, &height, &nrChannels, 0);
+    data = stbi_load("../Shaders/12/awesomeface.png", &width, &height, &nrChannels, 0);
     if (data)
     {
         // note that the awesomeface.png has transparency and thus an alpha channel, so make sure to tell OpenGL the data type is of GL_RGBA
@@ -199,7 +199,7 @@ void processInput(GLFWwindow *window)
 
     if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
     {
-        i += 0.001;
+        i += 0.01;
         if (i >= 1.0)
         {
             i = 1.0;
@@ -208,7 +208,7 @@ void processInput(GLFWwindow *window)
 
     if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
     {
-        i -= 0.001;
+        i -= 0.01;
         if (i <= 0.0)
         {
             i = 0.0;

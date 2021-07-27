@@ -16,6 +16,9 @@ public:
     // ------------------------------------------------------------------------
     Shader(const char *vertexPath, const char *fragmentPath)
     {
+        char *vertexAbsolutePath = realpath(vertexPath, NULL);
+        char *fragmentAbsolutePath = realpath(fragmentPath, NULL);
+
         // 1. retrieve the vertex/fragment source code from filePath
         std::string vertexCode;
         std::string fragmentCode;
@@ -27,8 +30,8 @@ public:
         try
         {
             // open files
-            vShaderFile.open(vertexPath);
-            fShaderFile.open(fragmentPath);
+            vShaderFile.open(vertexAbsolutePath);
+            fShaderFile.open(fragmentAbsolutePath);
             std::stringstream vShaderStream, fShaderStream;
             // read file's buffer contents into streams
             vShaderStream << vShaderFile.rdbuf();
@@ -75,7 +78,8 @@ public:
         glUseProgram(ID);
     }
 
-    void deleteProgram() {
+    void deleteProgram()
+    {
         glDeleteProgram(ID);
     }
 

@@ -79,7 +79,7 @@ int main()
     // uncomment this call to draw in wireframe polygons.
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
-    Shader ourShader("/Users/alex/code/play-place/learn-opengl/Shaders/05/shader.vs", "/Users/alex/code/play-place/learn-opengl/Shaders/05/shader.fs");
+    Shader ourShader("../Shaders/05/shader.vs", "../Shaders/05/shader.fs");
 
     // render loop
     // -----------

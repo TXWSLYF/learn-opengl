@@ -13,6 +13,8 @@ set(CMAKE_CXX_FLAGS "-g -std=c++11 -Wformat")
 
 # glfw的库目录路径
 link_directories(/usr/local/Cellar/glfw/3.3.4/lib)
+link_directories(/usr/local/Cellar/glfw/3.3.2/lib)
+add_executable(play play.cpp)
 add_executable(01 01.cpp glad/src/glad.c)
 add_executable(02 02.cpp glad/src/glad.c)
 add_executable(03 03.cpp glad/src/glad.c)

@@ -63,7 +63,7 @@ int main()
 
     // 读取图片数据
     int width, height, nrChannels;
-    unsigned char *data = stbi_load("/Users/alex/code/play-place/learn-opengl/Shaders/09/container.jpg", &width, &height, &nrChannels, 0);
+    unsigned char *data = stbi_load("../Shaders/09/container.jpg", &width, &height, &nrChannels, 0);
 
     unsigned int VBO, VAO, EBO, texture;
     glGenVertexArrays(1, &VAO);
@@ -113,7 +113,7 @@ int main()
     // uncomment this call to draw in wireframe polygons.
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
-    Shader ourShader("/Users/alex/code/play-place/learn-opengl/Shaders/09/shader.vs", "/Users/alex/code/play-place/learn-opengl/Shaders/09/shader.fs");
+    Shader ourShader("../Shaders/09/shader.vs", "../Shaders/09/shader.fs");
 
     // render loop
     // -----------
