@@ -3,6 +3,7 @@
         "__config": "cpp",
         "iosfwd": "cpp",
         "cstddef": "cpp",
-        "filesystem": "cpp"
+        "filesystem": "cpp",
+        "vector": "cpp"
     }
 }
